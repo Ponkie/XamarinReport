@@ -8,8 +8,6 @@ using Xamarin.Forms;
 
 namespace FormsReport
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
@@ -21,6 +19,18 @@ namespace FormsReport
         async void SwitchButton_Clicked(object sender, EventArgs e)
         {
             var page = new Switch();
+            await Navigation.PushAsync(page);
+        }
+
+        async void SliderButton_Clicked(object sender, EventArgs e)
+        {
+            var page = new Slider();
+            await Navigation.PushAsync(page);
+        }
+
+        async void StepperButton_Clicked(object sender, EventArgs e)
+        {
+            var page = new Stepper();
             await Navigation.PushAsync(page);
         }
     }

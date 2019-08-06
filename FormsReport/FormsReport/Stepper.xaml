@@ -4,27 +4,32 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FormsReport.Switch"
-             Title="Switch Example">
+             x:Class="FormsReport.Stepper">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" Padding="50">
-            <Label Text="Switch Sample"
+        <StackLayout>
+            <Label Text="Stepper Sample"
                    HorizontalTextAlignment="Center"
                    FontSize="56"
                    FontAttributes="Bold"/>
 
-            <Switch x:Name="styleSwitch"
-                    OnColor="LightSkyBlue"
-                    Toggled="Switch_Toggled"
-                    IsToggled="True"
-                    Scale="2"
+            <Stepper x:Name="stepper"
+                    Maximum="360"
+                    Minimum="0" 
+                    BackgroundColor="Pink"
+                    Rotation="90"
+                    Increment="22.55"
                     HorizontalOptions="CenterAndExpand"  
                     VerticalOptions="CenterAndExpand"/>
-
-            <Label x:Name="lblSwitchValue"
-                   FontSize="32"
-                   VerticalOptions="EndAndExpand"
+            
+            <StackLayout BindingContext="{x:Reference stepper}">
+                <Label Text="{Binding Value,
+                            StringFormat='The Value of Stepper is {0}'}"
+                   Rotation="{Binding Value}"
+                   x:Name="lblStepperValue"
+                   FontSize="16"
+                   VerticalOptions="CenterAndExpand"
                    HorizontalTextAlignment="Center"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -9,6 +9,12 @@
     <StackLayout>
         <Button Text="Switch"
                 Clicked="SwitchButton_Clicked"></Button>
+
+        <Button Text="Slider"
+                Clicked="SliderButton_Clicked"></Button>
+
+        <Button Text="Stepper"
+                Clicked="StepperButton_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>
